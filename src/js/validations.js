@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Expresiones regulares para las validaciones
     const patterns = {
         telefono: /^[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}$/, // Solo números y espacios entre los números
-        rfc: /^[A-Z&Ñ]{3,4}\d{6}[A-Z0-9]{3}$/, // RFC sin símbolos
+        rfc: /^[A-Z&Ñ]{3,4}\d{6}[A-Z0-9]{2,3}$/, // RFC sin símbolos
         // contacto: /^[A-Za-z\s]+$/, // Contacto sin números ni símbolos
         contacto: /^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/,
         email: /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|utez\.edu\.mx)$/, // Correos válidos con dominios permitidos
