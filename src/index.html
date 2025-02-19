@@ -10,7 +10,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./formStyles.css">
-    <title>Formulario</title>
+    <title>Registro de Empresas</title>
 </head>
 
 <body>
@@ -18,11 +18,11 @@
         <h2 class="text-center">Registro de Empresa</h2>
         <form id="registroForm">
 
-
             <div class="mb-3">
-                <label for="rz" class="form-label">Razón Social:</label>
-                <input type="text" class="form-control" id="rz" placeholder="Nombre de la Empresa" name="razon_social"
-                    pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" maxlength="30" title="Usa una razón social válida, sin tantos espacios" required>
+                <label for="razonSocial" class="form-label">Razón Social:</label>
+                <input type="text" class="form-control" id="razonSocial" placeholder="Nombre de la Empresa"
+                    name="razon_social" pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" maxlength="30"
+                    title="Usa una razón social válida, sin tantos espacios" required>
                 <div class="invalid-feedback">Por favor, ingresa una razón social válida</div>
             </div>
 
@@ -35,7 +35,6 @@
                         required>
                     <div class="invalid-feedback">RFC inválido. Debe tener entre 12 y 13 caracteres</div>
                 </div>
-
 
                 <div class="col-md-6">
                     <label for="telefono" class="form-label">Teléfono:</label>
@@ -52,7 +51,6 @@
                             <li><a class="dropdown-item" href="#" data-code="+34">🇪🇸 +34</a></li>
                         </ul>
 
-
                         <input type="tel" class="form-control" id="telefono" placeholder="Ingresa un teléfono"
                             title="Ingresa un teléfono válido">
 
@@ -63,7 +61,6 @@
                 </div>
             </div>
 
-
             <div class="mb-3">
                 <label for="contacto" class="form-label">Contacto:</label>
                 <input type="text" class="form-control" id="contacto" placeholder="Nombre del contacto" name="contacto"
@@ -72,23 +69,34 @@
                 <div class="invalid-feedback">Ingresa un nombre válido sin números ni símbolos.</div>
             </div>
 
-
             <div class="mb-3">
-                <label for="email" class="form-label">Correo:</label>
-                <input type="email" class="form-control" id="email" name="correo" placeholder="Ingresa tu correo"
+                <label for="correo" class="form-label">Correo:</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu correo"
                     required>
                 <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
             </div>
 
-
             <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-success" disabled>Enviar</button>
+                <button type="submit" id="btnEnviar" class="btn btn-success" disabled>Enviar</button>
             </div>
 
         </form>
+        
+        <div class="d-flex justify-content-end mt-4">
+            <button id="verEmpresasBtn" type="button" class="btn btn-primary">Ver Empresas</button>
+        </div>
+
     </div>
 
+    <script>
+        document.getElementById('verEmpresasBtn').addEventListener('click', function () {
+            window.location.href = 'empresasVer.html';
+        });
+    </script>
+
     <script src="./js/validations.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const codigoPaisMenu = document.getElementById('codigoPaisMenu');
     const telefonoInput = document.getElementById('telefono');
 
-    
     submitButton.disabled = true;
 
-   
     const patterns = {
         telefono: /^[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}$/, 
         rfc: /^[A-Z&Ñ]{3,4}\d{6}[A-Z0-9]{2,3}$/, 
@@ -18,19 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
         email: /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|utez\.edu\.mx)$/, 
     };
 
-    
     function validarCampo(input) {
         const { id, value } = input;
         let isValid = true;
 
-        
         if (!value.trim()) {
             isValid = false;
         } else if (patterns[id] && !patterns[id].test(value)) {
             isValid = false;
         }
 
-        
         if (!isValid) {
             input.classList.add('is-invalid');
             input.classList.remove('is-valid');
@@ -42,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return isValid;
     }
 
-   
     function validarFormulario() {
         let formularioValido = true;
 
@@ -55,44 +49,21 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = !formularioValido;
     }
 
-    
     codigoPaisMenu.addEventListener('click', (event) => {
         const selectedCode = event.target.getAttribute('data-code');
         if (selectedCode) {
-            
             codigoPaisBtn.textContent = selectedCode;
             codigoPaisBtn.setAttribute('data-code', selectedCode);
         }
     });
 
-    
     telefonoInput.addEventListener('input', function () {
         validarFormulario();
     });
 
-    
     inputs.forEach((input) => {
         input.addEventListener('input', validarFormulario);
     });
 
-   
-    form.addEventListener('submit', function (event) {
-        let formularioValido = true;
-
-        inputs.forEach((input) => {
-            if (!validarCampo(input)) {
-                formularioValido = false;
-            }
-        });
-
-        if (!formularioValido) {
-            event.preventDefault();
-            alert('Por favor, completa todos los campos correctamente.');
-        } else {
-            event.preventDefault();
-            alert('¡Formulario enviado correctamente!');
-            form.reset();
-            submitButton.disabled = true;
-        }
-    });
+    // Solo se encarga de validar campos visualmente, no maneja el submit
 });
