@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         telefono: /^[0-9]{3}\s?[0-9]{3}\s?[0-9]{4}$/, 
         rfc: /^[A-Z&Ñ]{3,4}\d{6}[A-Z0-9]{2,3}$/, 
         contacto: /^[A-Za-záéíóúÁÉÍÓÚñÑ]+(?:\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)*$/, 
-        razon_social: /^[A-Za-záéíóúÁÉÍÓÚñÑ]+(?:\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)*$/,
+        razon_social: /^[A-Za-záéíóúÁÉÍÓÚñÑ0-9&.,\-()_"'°]+(?:\s[A-Za-záéíóúÁÉÍÓÚñÑ0-9&.,\-()_"'°]+)*$/,
         email: /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|utez\.edu\.mx)$/, 
     };
 

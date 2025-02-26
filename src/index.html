@@ -21,7 +21,7 @@
             <div class="mb-3">
                 <label for="razonSocial" class="form-label">Razón Social:</label>
                 <input type="text" class="form-control" id="razonSocial" placeholder="Nombre de la Empresa"
-                    name="razon_social" pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" maxlength="30"
+                    name="razon_social" maxlength="30" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9&.,\-()_\"'°]+(?:\s[A-Za-záéíóúÁÉÍÓÚñÑ0-9&.,\-()_\"'°]+)*"
                     title="Usa una razón social válida, sin tantos espacios" required>
                 <div class="invalid-feedback">Por favor, ingresa una razón social válida</div>
             </div>
